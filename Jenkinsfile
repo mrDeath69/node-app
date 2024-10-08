@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'sudo docker build -t node-app .'
+                sh 'docker build -t node-app .'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'sudo docker run -d -p 3000:3000 --name node-app node-app'
+                sh 'docker run -d -p 3000:3000 --name node-app node-app'
             }
         }
     }
